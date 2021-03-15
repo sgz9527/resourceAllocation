@@ -37,6 +37,11 @@ class ServerKind:
         else:
             return self.D_distribute_resource(cpu, memory)
 
+    # cpu 和 memory的倍数
+    def get_beishu(self):
+        if self.a_cpu >= self.a_memory:
+            return self.a_cpu // self.a_memory
+
     # 单节点资源分配
     def S_distribute_resource(self, cpu: int, memory: int):
         a_cpu, a_memory = self.get_anode_info()
